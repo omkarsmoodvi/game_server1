@@ -1,0 +1,100 @@
+Base URL: http://localhost:8080
+API End Points: /games
+-----------------------------------------------
+1> POST /games  -> 
+-----------------------------------------------
+
+Request Body:
+{
+  "name": "PlayStation 5",
+  "description": "Next-gen gaming console with ultra-fast SSD",
+  "category": "console",
+  "price": 55000,
+  "stock": 5,
+  "tags": "console,gaming,sony,ps5"
+}
+
+Response: 201 Created
+{
+  "_id": "xyz001",
+  "name": "PlayStation 5",
+  "description": "Next-gen gaming console with ultra-fast SSD",
+  "category": "console",
+  "price": 55000,
+  "stock": 5,
+  "tags": "console,gaming,sony,ps5"
+}
+
+-----------------------------------------------
+2> GET /games  -> 
+-----------------------------------------------
+
+Response: 200 OK
+[
+  {
+    "_id": "xyz001",
+    "name": "PlayStation 5",
+    "description": "Next-gen gaming console with ultra-fast SSD",
+    "category": "console",
+    "price": 55000,
+    "stock": 5,
+    "tags": "console,gaming,sony,ps5"
+  },
+  {
+    "_id": "abcd002",
+    "name": "Xbox Series X",
+    "description": "Powerful gaming console by Microsoft",
+    "category": "console",
+    "price": 50000,
+    "stock": 3,
+    "tags": "console,gaming,microsoft,xbox"
+  }
+]
+
+--------------------------------------------------
+3> GET /games/xyz001  -> 
+--------------------------------------------------
+
+Response: 200 OK
+{
+  "_id": "xyz001",
+  "name": "PlayStation 5",
+  "description": "Next-gen gaming console with ultra-fast SSD",
+  "category": "console",
+  "price": 55000,
+  "stock": 5,
+  "tags": "console,gaming,sony,ps5"
+}
+
+-------------------------------------------------
+4> PUT /games/ xyz001  -> 
+-------------------------------------------------
+
+Request Body:
+{
+  "name": "PlayStation 5 Digital Edition",
+  "description": "PS5 Digital Edition with no disc drive",
+  "category": "console",
+  "price": 48000,
+  "stock": 10,
+  "tags": "console,gaming,sony,ps5,digital"
+}
+
+Response: 200 OK
+{
+  "_id": "xyz001",
+  "name": "PlayStation 5 Digital Edition",
+  "description": "PS5 Digital Edition with no disc drive",
+  "category": "console",
+  "price": 48000,
+  "stock": 10,
+  "tags": "console,gaming,sony,ps5,digital"
+}
+
+-------------------------------------------------
+5> DELETE /gaming/xyz001  -> Delete a gaming item
+-------------------------------------------------
+Response: 200 OK
+{
+  "message": "Deleted successfully"
+}

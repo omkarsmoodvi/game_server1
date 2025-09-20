@@ -1,0 +1,68 @@
+API End Points: /members
+=================================
+1> POST /members -> (Create members)
+Request body:
+{
+	"name": "Siddharth",
+    "ph_no" : "9746852130",
+	"balance": 5000.0,
+}
+				
+Response Body:201(status code for created status)
+{
+	"_id" : "memb001",
+	"name": "Siddharth",
+	"ph_no": "9746852130",
+    "balance":5000.0
+}
+				
+----------------------------------------------------------------------------				
+2> GET /members -> (get all members)	
+				
+Response Body:200 (status code :fetch is ok)
+[{
+	"_id" : "memb001",
+	"name": "Siddharth ",
+	"ph_no": "9746852130",
+    "balance":5000.0
+},
+                
+					.......
+				
+				]
+------------------------------------------------------------------------------
+3> GET /members/memb001      -> (get members by id)	
+
+Response Body:200 (status code :fetch is ok)
+{
+	"_id" : "memb001",
+	"name": "Siddharth ",
+	"ph_no": "9746852130",
+    "balance":5000.0
+}
+---------------------------------------------------------------------------			
+
+4> PUT /members/memb001 -> (Update members)
+Request body:
+{
+	"_id" : "memb001",
+	"name": "Siddharth ",
+	"ph_no": "9746852130",
+    "balance":5000.0
+}
+				
+Response Body: 200(status code for updated successfully)
+{
+	"_id" : "memb001",
+	"name": "Siddharth ",
+	"ph_no": "9746852130",
+    "balance":10000.0
+}
+-------------------------------------------------------------------------
+5> DELETE /members/memb001      -> (delete members by id)	
+
+Response Body:200 (status code :deleted successfully)
+{
+	"message" : " Deleted successfully"
+}			
+--------------------------------------------------------------------------
